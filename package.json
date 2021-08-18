@@ -9,8 +9,8 @@
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint --fix 'src/**/*.ts'",
     "test": "jest",
-    "start": "tsc --build && node ./lib/index.js",
-    "watch": "nodemon --watch ./src -e ts --exec \"npm run start\""
+    "start": "node ./lib/index.js",
+    "watch": "nodemon --watch ./src -e ts --exec \"npm run build\""
   },
   "repository": {
     "type": "git",
