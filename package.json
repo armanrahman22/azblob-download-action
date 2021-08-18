@@ -1,35 +1,50 @@
 {
-  "name": "javascript-action",
-  "version": "1.0.0",
-  "description": "JavaScript Action Template",
-  "main": "index.js",
+  "name": "azblob-download-action",
+  "version": "0.0.1",
+  "description": "Github Action to download from Azure Blob Storage",
+  "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint .",
-    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "compile": "ncc build src/index.ts -o dist",
+    "build": "tsc --build",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
     "test": "jest",
-    "all": "npm run lint && npm run prepare && npm run test"
+    "start": "tsc --build && node ./lib/index.js",
+    "watch": "nodemon --watch ./src -e ts --exec \"npm run start\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/armanrahman22/azblob-download-action.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
     "JavaScript"
   ],
-  "author": "",
+  "author": "Arman Rahman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/armanrahman22/azblob-download-action/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/armanrahman22/azblob-download-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.5"
+    "@actions/core": "^1.2.5",
+    "@azure/identity": "^1.5.1",
+    "@azure/storage-blob": "^12.7.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.27.0",
-    "eslint": "^7.4.0",
-    "jest": "^26.6.3"
+    "@types/dotenv": "6.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "@vercel/ncc": "^0.29.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "7.0.1",
+    "jest": "^26.6.3",
+    "lint-staged": "11.1.2",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "typescript": "~4.3.2"
   }
 }

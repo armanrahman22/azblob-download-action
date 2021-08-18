@@ -1,13 +1,24 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: "Azure Blob Storage - Download Blob"
+description: "Download a blob from azure blob storage"
+author: "Arman Rahman"
+branding:
+  icon: "download-cloud"
+  color: "blue"
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  connection-string:
+    description: "Connection string"
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  name:
+    description: "Blob name"
+    required: true
+  path:
+    description: "Destination path"
+    required: false
+    default: ""
+  container:
+    description: "Container name"
+    required: false
+    default: "github-action-artifacts"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
