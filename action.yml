@@ -5,20 +5,31 @@ branding:
   icon: "download-cloud"
   color: "blue"
 inputs:
+  storage-account-name:
+    description: "Name of Azure Storage Account"
+    required: false
+  storage-account-key:
+    description: "Secret Key for the Azure Storage Account"
+    required: false
+  creds:
+    description: "Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS"
+    required: false
   connection-string:
     description: "Connection string"
+    required: false
+  sas:
+    description: "shared access signatures (SAS) token for blob"
+    required: false
+  container-name:
+    description: "Container name"
     required: true
-  name:
+  blob-name:
     description: "Blob name"
     required: true
-  path:
+  download-path:
     description: "Destination path"
     required: false
-    default: ""
-  container:
-    description: "Container name"
-    required: false
-    default: "github-action-artifacts"
+    default: "."
 runs:
   using: "node12"
   main: "dist/index.js"
