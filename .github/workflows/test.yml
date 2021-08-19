@@ -30,7 +30,7 @@ jobs:
       - name: Confirm
         shell: bash
         run: |
-          test -d azblob-download-artifact
+          ls
           test -f test1.txt
           rm test1.txt
       - name: Download with storage key
@@ -44,7 +44,7 @@ jobs:
       - name: Confirm
         shell: bash
         run: |
-          test -d azblob-download-artifact
+          ls
           test -f test1.txt
           rm test1.txt
       - name: Download with sas
@@ -58,7 +58,7 @@ jobs:
       - name: Confirm
         shell: bash
         run: |
-          test -d azblob-download-artifact
+          ls
           test -f test1.txt
           rm test1.txt
       - name: Download with creds
@@ -72,7 +72,7 @@ jobs:
       - name: Confirm
         shell: bash
         run: |
-          test -d azblob-download-artifact
+          ls
           test -f test1.txt
           rm test1.txt
       - uses: azure/login@v1
@@ -88,6 +88,6 @@ jobs:
       - name: Confirm
         shell: bash
         run: |
-          test -d azblob-download-artifact
+          ls
           test -f test1.txt
           rm test1.txt
