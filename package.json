@@ -8,7 +8,7 @@
     "build": "tsc --build",
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint --fix 'src/**/*.ts'",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "start": "node ./lib/index.js",
     "watch": "nodemon --watch ./src -e ts --exec \"npm run build\""
   },
