@@ -75,20 +75,3 @@ jobs:
           ls
           test -f test1.txt
           rm test1.txt
-      - name: Download with env variables
-        uses: ./
-        with:
-          storage-account-name: ${{ secrets.STORAGE_ACCOUNT_NAME }}
-          container-name: "test-files"
-          blob-name: "test1.txt"
-          download-path: "."
-        env: # Or as an environment variable
-          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-      - name: Confirm
-        shell: bash
-        run: |
-          ls
-          test -f test1.txt
-          rm test1.txt
