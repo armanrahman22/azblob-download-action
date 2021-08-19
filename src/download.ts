@@ -4,6 +4,7 @@ import {
 } from "@azure/storage-blob"
 import * as core from "@actions/core"
 import { join } from "path"
+
 export async function download(
 	client: BlobServiceClient,
 	containerName: string,
