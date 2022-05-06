@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/armanrahman22/azblob-download-action#readme",
   "dependencies": {
-    "@actions/core": "^1.4.0",
+    "@actions/core": "^1.8.0",
     "@azure/identity": "^1.5.1",
     "@azure/storage-blob": "^12.7.0"
   },
